@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="student"
+            type="com.android.swordgrouptask.room.Student" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/llName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_colon"
+                    android:textColor="?attr/textColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@{student.name}"
+                    android:textColor="?attr/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/llName">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/age_colon"
+                    android:textColor="?attr/textColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@{student.age}"
+                    android:textColor="?attr/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llClass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/llAge">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/m_class_colon"
+                    android:textColor="?attr/textColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvClass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@{student.mClass}"
+                    android:textColor="?attr/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_edit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
